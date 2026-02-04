@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tol Kope Us?</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Tol kope us sa Feb 14?</h1>
+
+  <div class="image-container">
+    <img src="peng.jpg" alt="Kope Image" id="kopeImage">
+  </div>
+
+  <div class="button-area">
+    <div class="button-container">
+      <button id="yesBtn">Yes</button>
+      <button id="noBtn">No</button>
+    </div>
+  </div>
+
+  <div id="popupPanel" class="popup-panel">
+    <div class="popup-content">
+      <p>NICE ONE TOL TARA KOPE US MY TREAT HEHE BISKAN WAY KA GAPANGAPE TAMA TAMA</p>
+      <button id="closeBtn">Close</button>
+    </div>
+  </div>
+
+  <script>
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const popupPanel = document.getElementById("popupPanel");
+    const closeBtn = document.getElementById("closeBtn");
+    const buttonArea = document.querySelector(".button-area");
+
+    const noTexts = [
+      "sige na tol",
+      "please tol",
+      "KOPE",
+      "tol ohh",
+      "payag na tol",
+      "kope na tol",
+      "tara tol oh"
+    ];
+
+    let yesScale = 1;
+
+    noBtn.addEventListener("click", () => {
+      const areaRect = buttonArea.getBoundingClientRect();
+      const x = Math.floor(Math.random() * (areaRect.width - 100));
+      const y = Math.floor(Math.random() * (areaRect.height - 50));
+      noBtn.style.position = "absolute";
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+
+      const randomText = noTexts[Math.floor(Math.random() * noTexts.length)];
+      noBtn.textContent = randomText;
+
+      yesScale += 0.2;
+      yesBtn.style.transform = `scale(${yesScale})`;
+    });
+
+    yesBtn.addEventListener("click", () => {
+      popupPanel.style.display = "flex";
+    });
+
+    closeBtn.addEventListener("click", () => {
+      popupPanel.style.display = "none";
+    });
+  </script>
+</body>
+</html>
