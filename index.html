@@ -27,7 +27,7 @@
     </div>
   </div>
 
-  <audio id="bgMusic" autoplay loop>
+  <audio id="bgMusic" autoplay loop muted>
     <source src="song.mp3" type="audio/mpeg">
   </audio>
 
@@ -75,6 +75,7 @@
     });
 
     document.body.addEventListener("click", () => {
+      bgMusic.muted = false;
       bgMusic.play();
     }, { once: true });
   </script>
