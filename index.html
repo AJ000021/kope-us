@@ -27,12 +27,17 @@
     </div>
   </div>
 
+  <audio id="bgMusic" autoplay loop>
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
+
   <script>
     const noBtn = document.getElementById("noBtn");
     const yesBtn = document.getElementById("yesBtn");
     const popupPanel = document.getElementById("popupPanel");
     const closeBtn = document.getElementById("closeBtn");
     const buttonArea = document.querySelector(".button-area");
+    const bgMusic = document.getElementById("bgMusic");
 
     const noTexts = [
       "sige na tol",
@@ -68,6 +73,10 @@
     closeBtn.addEventListener("click", () => {
       popupPanel.style.display = "none";
     });
+
+    document.body.addEventListener("click", () => {
+      bgMusic.play();
+    }, { once: true });
   </script>
 </body>
 </html>
