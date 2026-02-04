@@ -20,7 +20,8 @@ h1 {
 }
 
 #kopeImage {
-  max-width: 80%;
+  width: 100%;
+  max-width: 350px;
   height: auto;
   border: 3px solid #d63384;
   border-radius: 10px;
@@ -29,10 +30,9 @@ h1 {
 .button-area {
   width: 100%;
   max-width: 350px;
-  height: 180px;
-  margin: 0 auto;
+  height: 200px;
+  margin: 20px auto;
   position: relative;
-  margin-top: 20px;
 }
 
 .button-container {
@@ -46,7 +46,7 @@ button {
   background-color: #d63384;
   color: #ffffff;
   border: 2px solid #d63384;
-  padding: 10px 20px;
+  padding: 12px 24px;
   font-size: 16px;
   font-weight: bold;
   border-radius: 8px;
@@ -113,4 +113,19 @@ button:hover {
   background-color: #ffffff;
   color: #d63384;
   border: 2px solid #d63384;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.2em;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .button-area {
+    height: 160px;
+  }
 }
